@@ -1,0 +1,403 @@
+@import 'node_modules/jeet/scss/index';
+
+// Page-wide styles
+  html {
+    scroll-behavior : smooth;
+  } 
+
+  .family {
+    @include main-font;
+    @include center(1045px);
+
+    &__name {
+      font-size: 32px;
+      color: #000000;
+      text-align: center;
+    }
+//
+
+
+// Reusable modules
+  // Content slice
+    .slice {
+      padding: 50px 8px 50px 8px;
+      background-color: #fff;
+      @include thin {
+        display: none;
+      }
+      &--grey {
+          background-color: #F4F4F4;
+      }
+      overflow: hidden;
+      &__col {
+        @include column(1/4);
+        @include thin {
+          @include column(1);
+          margin-top: 5px;
+          margin-bottom: 5px;
+        }
+        @include mobile {
+          text-align: center;
+        }
+      }
+    }
+  // 
+// 
+
+
+
+// Hero banner
+  .ii-banner {
+    background-image: url('../assets/marble-bg-2x.png');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: right;
+    height: 319px;
+
+  // When screen width is thin, show mobile table 
+    @include table-switch {
+      background-image: url('https://image.ebuyer.com/customer/promos/custom-page-assets/hpinstantink/marble-bg-2x--mob.jpg');
+    }
+  // 
+  
+  // Div containing all text
+    &__text {
+      max-width: 470px;
+      position: absolute;
+      margin-top: 40px;
+      margin-left: 40px;
+    }
+  // 
+
+  // Header text only
+    &__header {
+      color: #B910A4;
+      font-size: 28px;
+      font-weight: 500;
+      margin-top: 30px;
+    }
+  // 
+
+  // Description text only
+    &__desc {
+      font-size: 16px;
+      font-weight: 300;
+      color: #000;
+      margin-bottom: 20px;
+    }
+  // 
+
+  // Join Instant Ink button
+    &__button {
+      font-size: 16px;
+      font-weight: 400;
+      color: #fff;
+      background-color: #0096D6;
+      border: none;
+      padding: 8px 20px 8px 20px;
+    }
+  }
+  // 
+
+// Hero banner end
+
+// Cartridge selection
+  .cartridges {
+    &__options {
+      @include center;
+      text-align: center;
+      padding: 20px;
+    }
+
+  // Select options
+    &__option {
+      font-size: 16px;
+      font-weight: 400;
+      color: #767676;
+      &--right {
+        border-left: 1px solid #767676;
+        padding-left: 16px;
+      }
+      &--left {
+        padding-right: 10px;
+      }
+    }
+  // 
+
+  // Information about selected yield type
+    &__info-wrap {
+      background-color: #F4F4F4;
+      padding: 15px 30px 15px 30px;
+    }
+    &__info {
+      font-size: 16px;
+      color: #000;
+      font-weight: 500;
+      margin-bottom: 0;
+      &--desc {
+        font-weight: 300;
+        margin-top: 0;
+      }
+    }
+  // 
+  }
+// End of cartridge selection
+
+// Product
+.product {
+  border: 1px solid #707070;
+  overflow: hidden;
+
+// Jeet Grid System columns
+  &__column {
+    padding: 20px 4px 20px 4px;
+    &--info {
+      @include column(3/9);
+      text-align: center;
+      @include thin {
+        @include column(4/9);
+        text-align: center;
+        margin-top: 30px;
+      }
+      @include mobile {
+        @include column(1);
+        text-align: center;
+      }
+      
+    }
+    &--pricing {
+      @include column(6/9)
+      @include thin {
+        @include column(5/9);
+      }
+      @include mobile {
+        @include column(1);
+      }
+    }
+  }
+//
+
+  // Image wrapper column
+    &__img-wrap {
+      @include mobile {
+        @include column(2/7);
+      }
+    }
+  //
+
+  // Text wrapper column
+    &__text-wrap {
+      @include mobile {
+        @include column(5/7);
+        text-align: left;
+      }
+    }
+  //
+
+  // Name and image
+    &__name {
+      font-size: 20px;
+      color: #000;
+      font-weight: 300;
+    }
+    &__img {
+      margin-top: 30px;
+      max-width: 100px;
+      @include mobile {
+        max-width: 50px;
+      }
+    }
+  // 
+
+  // Part code
+    &__small {
+      font-size: 14px;
+      color: #000;
+      font-weight: 300;
+    }
+  // 
+
+  // Learn more button (linking to product page)
+    &__learn {
+      font-size: 14px;
+      color: #0096D6;
+      font-weight: 300;
+    }
+  // 
+
+  // Delivery within x amount of time
+    &__eta {
+      font-size: 14px;
+      color: #008000;
+      font-weight: 300;
+      margin-bottom: 40px;
+      margin-top: 10px;
+    }
+  // 
+
+  // Join Instant Ink
+    &__free-credit {
+      display: block;
+      @include mobile {
+        display: none;
+      }
+      font-size: 13px;
+      color: #B700AD;
+      border: solid 1px #B700AD;
+      border-radius: 12px;
+      font-weight: 400;
+      background-color: #fff;
+      padding: 4px 16px 4px 16px;
+    }
+
+  // Join Instant Ink - Mobile
+    &__free-credit-mob {
+      display: none;
+      @include mobile {
+        display: block;
+      }
+      font-size: 13px;
+      color: #B700AD;
+      border: solid 1px #B700AD;
+      border-radius: 12px;
+      font-weight: 400;
+      background-color: #fff;
+      padding: 4px 16px 4px 16px;
+    }
+  // 
+
+  // Ink colour display
+    &__colour {
+      width: 44px;
+      height: 44px;
+      border-radius: 100px;
+      background-color: #000;
+      margin: 0 auto;
+    }
+  // 
+
+  // Estimated page yield
+    &__pages {
+      display: inline-block;
+      margin-right: 20px;
+      margin-right: 5px;
+      font-size: 16px;
+      font-weight: 400;
+      color: #000;
+      line-height: 1.2;
+    }
+  // 
+
+  // Ink quantity
+    &__quant {
+      height: 40px;
+      min-width: 57px;
+      display: inline-block;
+      margin-top: 2px;
+    }
+  // 
+
+  // Ink price
+    &__price {
+      font-size: 21px;
+      color: #D7410B;
+      font-weight: 400;
+      margin-bottom: -5px;
+      margin-top: 0px;
+      &--vat {
+        color: #000;
+        font-size: 12px;
+        margin-top: 0px;
+      }
+    }
+  // 
+
+  // Add to basket button
+    &__button {
+      font-size: 14px;
+      font-weight: 300;
+      color: #ffffff;
+      background-color: #D7410B;
+      border: none;
+      padding: 12px 18px 12px 18px;
+      @include mobile {
+        padding-left: 80px;
+        padding-right: 80px;
+        margin-top: 24px;
+      }
+      &--basket {
+        background-color: #0096D6;
+      }
+    }
+  // 
+  
+  // Instant ink logo
+    &__ii-logo {
+      @include center;
+      margin-top: 8px;
+    }
+  // 
+}
+// End of product
+
+
+// Instant Ink details section
+  .ii-details {
+    background-color: #F4F4F4;
+    padding-left: 25px;
+    padding-right: 25px;
+    overflow: hidden;
+
+  // Instant Ink details grid
+    &__grid {
+      display: none;
+    }
+  // 
+
+  // Show Instant Ink details
+    &__button {
+      @include center;
+      text-align: center;
+      margin-bottom: 40px;
+    // "Hide details" button
+      &--hidden-text {
+        @include center;
+      text-align: center;
+      margin-bottom: 40px;
+      display: none;
+      }
+    // 
+    }
+  //
+
+  // Details 
+    &__detail {
+      color: #000;
+      font-size: 16px;
+      &--header {
+        font-weight: 500;
+      }
+      &--desc {
+        font-weight: 300;
+      }
+    }
+    &__col {
+      @include column(1/2);
+      @include thinner {
+        @include column(1);
+      }
+    }
+    &__icon {
+      width: 35px;
+      height: 35px;
+      @include column(1/5);
+    }
+    &__text {
+      @include column(4/5);
+    }
+  }
+// End of Instant Ink details
+
+}
+// End of content wrapper
+
